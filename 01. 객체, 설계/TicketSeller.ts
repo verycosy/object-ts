@@ -1,3 +1,4 @@
+import Audience from './Audience';
 import TicketOffice from './TicketOffice';
 
 class TicketSeller {
@@ -7,8 +8,8 @@ class TicketSeller {
     this.ticketOffice = ticketOffice;
   }
 
-  public getTicketOffice(): TicketOffice {
-    return this.ticketOffice;
+  public sellTo(audience: Audience): void {
+    this.ticketOffice.plusAmount(audience.buy(this.ticketOffice.getTicket()));
   }
 }
 
