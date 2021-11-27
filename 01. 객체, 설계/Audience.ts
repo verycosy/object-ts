@@ -1,5 +1,5 @@
-import Bag from './bag';
-import Ticket from './ticket';
+import Bag from './Bag';
+import Ticket from './Ticket';
 
 class Audience {
   private bag: Bag;

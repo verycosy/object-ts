@@ -10,7 +10,13 @@ class TicketOffice {
   }
 
   public getTicket(): Ticket {
-    return this.tickets.shift();
+    const ticket = this.tickets.shift();
+
+    if (!ticket) {
+      throw new Error('Not enough ticket');
+    }
+
+    return ticket;
   }
 
   public minusAmount(amount: number): void {

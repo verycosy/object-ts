@@ -1,14 +1,16 @@
-import Invitation from './invitation';
-import Ticket from './ticket';
+import { Nullable } from '../types';
+import Invitation from './Invitation';
+import Ticket from './Ticket';
 
 class Bag {
   private amount: number;
-  private invitation: Invitation;
-  private ticket: Ticket;
+  private invitation: Nullable<Invitation>;
+  private ticket: Nullable<Ticket>;
 
   constructor(amount: number, invitation?: Invitation) {
     this.amount = amount;
     this.invitation = invitation ?? null;
+    this.ticket = null;
   }
 
   public hold(ticket: Ticket): number {
