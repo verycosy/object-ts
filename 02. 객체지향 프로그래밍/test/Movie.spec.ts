@@ -2,6 +2,7 @@ import { DayOfWeek, Duration, LocalTime } from 'js-joda';
 import AmountDiscountPolicy from '../AmountDiscountPolicy';
 import Money from '../Money';
 import Movie from '../Movie';
+import NoneDiscountPolicy from '../NoneDiscountPolicy';
 import PercentDiscountPolicy from '../PercentDiscountPolicy';
 import PeriodCondition from '../PeriodCondition';
 import SequenceCondition from '../SequenceCondition';
@@ -45,6 +46,13 @@ describe('Movie', () => {
           LocalTime.of(13, 59)
         ),
       ])
+    );
+
+    const starWars = new Movie(
+      '스타워즈',
+      Duration.ofMinutes(210),
+      Money.wons(10000),
+      new NoneDiscountPolicy()
     );
   });
 });
